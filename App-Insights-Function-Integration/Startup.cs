@@ -34,7 +34,7 @@ namespace App_Insights_Function_Integration
          }
      });
 
-            //builder.Services.ConfigureTelemetryModule<QuickPulseTelemetryModule>((module, o) => module.QuickPulseServiceEndpoint = "https://quickpulse.applicationinsights.us/QuickPulseService.svc");
+            builder.Services.ConfigureTelemetryModule<QuickPulseTelemetryModule>((module, o) => module.QuickPulseServiceEndpoint = "https://quickpulse.applicationinsights.azure.cn/QuickPulseService.svc");
 
             builder.Services.AddSingleton<IApplicationIdProvider>(_ => new ApplicationInsightsApplicationIdProvider() { ProfileQueryEndpoint = "https://dc.applicationinsights.azure.cn/api/profiles/{0}/appId" });
             builder.Services.AddSingleton<ITelemetryChannel>(s =>
